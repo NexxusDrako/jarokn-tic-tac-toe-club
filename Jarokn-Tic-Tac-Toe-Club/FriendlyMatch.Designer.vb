@@ -33,6 +33,8 @@ Partial Class FriendlyMatch
         Me.xy22 = New System.Windows.Forms.Button()
         Me.txtWhosPlaying = New System.Windows.Forms.TextBox()
         Me.txtScore = New System.Windows.Forms.TextBox()
+        Me.btnReset = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'xy00
@@ -137,11 +139,31 @@ Partial Class FriendlyMatch
         Me.txtScore.Text = "Score: X 0 - O 0"
         Me.txtScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'btnReset
+        '
+        Me.btnReset.Location = New System.Drawing.Point(12, 305)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnReset.TabIndex = 11
+        Me.btnReset.Text = "Reset"
+        Me.btnReset.UseVisualStyleBackColor = True
+        '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(174, 305)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 12
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'FriendlyMatch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(392, 366)
+        Me.ClientSize = New System.Drawing.Size(261, 340)
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.txtScore)
         Me.Controls.Add(Me.txtWhosPlaying)
         Me.Controls.Add(Me.xy22)
@@ -170,4 +192,6 @@ Partial Class FriendlyMatch
     Friend WithEvents xy22 As System.Windows.Forms.Button
     Friend WithEvents txtWhosPlaying As System.Windows.Forms.TextBox
     Friend WithEvents txtScore As System.Windows.Forms.TextBox
+    Friend WithEvents btnReset As System.Windows.Forms.Button
+    Friend WithEvents btnBack As System.Windows.Forms.Button
 End Class
