@@ -131,12 +131,13 @@ Partial Class FriendlyMatch
         '
         'txtScore
         '
+        Me.txtScore.Enabled = False
         Me.txtScore.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtScore.Location = New System.Drawing.Point(12, 281)
         Me.txtScore.Name = "txtScore"
         Me.txtScore.Size = New System.Drawing.Size(237, 18)
         Me.txtScore.TabIndex = 10
-        Me.txtScore.Text = "Score: X 0 - O 0"
+        Me.txtScore.Text = "Score: O 0 - X 0"
         Me.txtScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnReset
