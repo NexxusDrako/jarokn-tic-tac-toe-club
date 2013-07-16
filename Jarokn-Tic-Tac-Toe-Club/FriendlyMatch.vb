@@ -137,20 +137,52 @@
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
             OScore = OScore + 1
             GameWon()
+        ElseIf xy10.Text = "O" And xy11.Text = "O" And xy12.Text = "O" Then
+            MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
+            OScore = OScore + 1
+            GameWon()
+        ElseIf xy20.Text = "O" And xy21.Text = "O" And xy22.Text = "O" Then
+            MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
+            OScore = OScore + 1
+            GameWon()
+        ElseIf xy01.Text = "O" And xy11.Text = "O" And xy21.Text = "O" Then
+            MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
+            OScore = OScore + 1
+            GameWon()
+        ElseIf xy02.Text = "O" And xy12.Text = "O" And xy22.Text = "O" Then
+            MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
+            OScore = OScore + 1
+            GameWon()
         ElseIf xy00.Text = "X" And xy01.Text = "X" And xy02.Text = "X" Then
-            MsgBox("Well done Player X, YXU WIN!", MsgBoxStyle.Exclamation, "Player X WINS!")
+            MsgBox("Well done Player X, YOU WIN!", MsgBoxStyle.Exclamation, "Player X WINS!")
             XScore = XScore + 1
             GameWon()
         ElseIf xy00.Text = "X" And xy10.Text = "X" And xy20.Text = "X" Then
-            MsgBox("Well done Player X, YOU WIN!", MsgBoxStyle.Exclamation, "Player X WINS!")
+            MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
             XScore = XScore + 1
             GameWon()
         ElseIf xy00.Text = "X" And xy11.Text = "X" And xy22.Text = "X" Then
-            MsgBox("Well done Player X, YOU WIN!", MsgBoxStyle.Exclamation, "Player X WINS!")
+            MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
             XScore = XScore + 1
             GameWon()
         ElseIf xy02.Text = "X" And xy11.Text = "X" And xy20.Text = "X" Then
-            MsgBox("Well done Player X, YOU WIN!", MsgBoxStyle.Exclamation, "Player X WINS!")
+            MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
+            XScore = XScore + 1
+            GameWon()
+        ElseIf xy10.Text = "X" And xy11.Text = "X" And xy12.Text = "X" Then
+            MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
+            XScore = XScore + 1
+            GameWon()
+        ElseIf xy20.Text = "X" And xy21.Text = "X" And xy22.Text = "X" Then
+            MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
+            XScore = XScore + 1
+            GameWon()
+        ElseIf xy01.Text = "X" And xy11.Text = "X" And xy21.Text = "X" Then
+            MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
+            XScore = XScore + 1
+            GameWon()
+        ElseIf xy02.Text = "X" And xy12.Text = "X" And xy22.Text = "X" Then
+            MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
             XScore = XScore + 1
             GameWon()
         End If
