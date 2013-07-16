@@ -96,6 +96,7 @@
     End Sub
 
     Public Sub ResetBoard()
+        'This function resets the board'
         OTurn = True
         txtWhosPlaying.Text = "Player O's Turn!"
         xy00.Text = ""
@@ -110,6 +111,7 @@
     End Sub
 
     Public Sub TurnDone()
+        'This game changes the player and then calls the check board function'
         If OTurn = True Then
             OTurn = False
             txtWhosPlaying.Text = "Player X's Turn!"
@@ -121,6 +123,7 @@
     End Sub
 
     Public Sub CheckBoard()
+        'This function checks the board for winners'
         If xy00.Text = "O" And xy01.Text = "O" And xy02.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
             OScore = OScore + 1
@@ -188,6 +191,7 @@
         End If
     End Sub
     Public Sub GameWon()
+        'This function finishes the game when won'
         ResetBoard()
         txtScore.Text = "Score: O " & OScore & " - X " & XScore
     End Sub
