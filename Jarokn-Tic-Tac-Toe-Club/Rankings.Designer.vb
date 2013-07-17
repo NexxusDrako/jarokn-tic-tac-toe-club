@@ -27,6 +27,7 @@ Partial Class Rankings
         Me.TblPlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TicTacToeDataSet = New Jarokn_Tic_Tac_Toe_Club.TicTacToeDataSet()
         Me.TblPlayersTableAdapter = New Jarokn_Tic_Tac_Toe_Club.TicTacToeDataSetTableAdapters.tblPlayersTableAdapter()
+        Me.UserID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GivenNamesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SurnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,7 +48,7 @@ Partial Class Rankings
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.GivenNamesDataGridViewTextBoxColumn, Me.SurnameDataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.RegionalAreaDataGridViewTextBoxColumn, Me.CountryDataGridViewTextBoxColumn, Me.EloRatingDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UserID, Me.GivenNamesDataGridViewTextBoxColumn, Me.SurnameDataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.RegionalAreaDataGridViewTextBoxColumn, Me.CountryDataGridViewTextBoxColumn, Me.EloRatingDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.TblPlayersBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(13, 13)
         Me.DataGridView1.Name = "DataGridView1"
@@ -68,6 +69,13 @@ Partial Class Rankings
         'TblPlayersTableAdapter
         '
         Me.TblPlayersTableAdapter.ClearBeforeFill = True
+        '
+        'UserID
+        '
+        Me.UserID.DataPropertyName = "UserID"
+        Me.UserID.HeaderText = "UserID"
+        Me.UserID.Name = "UserID"
+        Me.UserID.ReadOnly = True
         '
         'GivenNamesDataGridViewTextBoxColumn
         '
@@ -136,6 +144,7 @@ Partial Class Rankings
     Friend WithEvents TblPlayersBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents TblPlayersTableAdapter As Jarokn_Tic_Tac_Toe_Club.TicTacToeDataSetTableAdapters.tblPlayersTableAdapter
     Friend WithEvents UserIDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UserID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents GivenNamesDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SurnameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CityDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
