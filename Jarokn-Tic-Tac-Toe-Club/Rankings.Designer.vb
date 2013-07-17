@@ -24,9 +24,6 @@ Partial Class Rankings
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TblPlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TicTacToeDataSet = New Jarokn_Tic_Tac_Toe_Club.TicTacToeDataSet()
-        Me.TblPlayersTableAdapter = New Jarokn_Tic_Tac_Toe_Club.TicTacToeDataSetTableAdapters.tblPlayersTableAdapter()
         Me.UserID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GivenNamesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SurnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,6 +31,9 @@ Partial Class Rankings
         Me.RegionalAreaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CountryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EloRatingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TblPlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TicTacToeDataSet = New Jarokn_Tic_Tac_Toe_Club.TicTacToeDataSet()
+        Me.TblPlayersTableAdapter = New Jarokn_Tic_Tac_Toe_Club.TicTacToeDataSetTableAdapters.tblPlayersTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblPlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TicTacToeDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,20 +55,6 @@ Partial Class Rankings
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(767, 541)
         Me.DataGridView1.TabIndex = 0
-        '
-        'TblPlayersBindingSource
-        '
-        Me.TblPlayersBindingSource.DataMember = "tblPlayers"
-        Me.TblPlayersBindingSource.DataSource = Me.TicTacToeDataSet
-        '
-        'TicTacToeDataSet
-        '
-        Me.TicTacToeDataSet.DataSetName = "TicTacToeDataSet"
-        Me.TicTacToeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TblPlayersTableAdapter
-        '
-        Me.TblPlayersTableAdapter.ClearBeforeFill = True
         '
         'UserID
         '
@@ -124,6 +110,20 @@ Partial Class Rankings
         Me.EloRatingDataGridViewTextBoxColumn.Name = "EloRatingDataGridViewTextBoxColumn"
         Me.EloRatingDataGridViewTextBoxColumn.ReadOnly = True
         Me.EloRatingDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        '
+        'TblPlayersBindingSource
+        '
+        Me.TblPlayersBindingSource.DataMember = "tblPlayers"
+        Me.TblPlayersBindingSource.DataSource = Me.TicTacToeDataSet
+        '
+        'TicTacToeDataSet
+        '
+        Me.TicTacToeDataSet.DataSetName = "TicTacToeDataSet"
+        Me.TicTacToeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblPlayersTableAdapter
+        '
+        Me.TblPlayersTableAdapter.ClearBeforeFill = True
         '
         'Rankings
         '

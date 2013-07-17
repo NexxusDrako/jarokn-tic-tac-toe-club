@@ -1,14 +1,13 @@
-﻿Public Class FriendlyMatch
+﻿Public Class RankedMatch
 
-    Dim OTurn As Boolean
-    Dim OScore As Integer
-    Dim XScore As Integer
-
-    Public Sub MatchVars()
-        OTurn = True
-        OScore = 0
-        XScore = 0
-    End Sub
+    Public OTurn As Boolean = True
+    Public OElo As Integer
+    Public XElo As Integer
+    Public OUserID As Integer
+    Public XUserID As Integer
+    Public Result As Single
+    Public Shared RatingNewO As Integer
+    Public Shared RatingNewX As Integer
 
     Private Sub xy00_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xy00.Click
         If OTurn = True Then
@@ -91,25 +90,6 @@
         TurnDone()
     End Sub
 
-    Private Sub btnReset_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReset.Click
-        ResetBoard()
-    End Sub
-
-    Public Sub ResetBoard()
-        'This function resets the board'
-        OTurn = True
-        txtWhosPlaying.Text = "Player O's Turn!"
-        xy00.Text = ""
-        xy01.Text = ""
-        xy02.Text = ""
-        xy10.Text = ""
-        xy11.Text = ""
-        xy12.Text = ""
-        xy20.Text = ""
-        xy21.Text = ""
-        xy22.Text = ""
-    End Sub
-
     Public Sub TurnDone()
         'This game changes the player and then calls the check board function'
         If OTurn = True Then
@@ -126,73 +106,112 @@
         'This function checks the board for winners'
         If xy00.Text = "O" And xy01.Text = "O" And xy02.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
-            OScore = OScore + 1
+            Result = 1
             GameWon()
         ElseIf xy00.Text = "O" And xy10.Text = "O" And xy20.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
-            OScore = OScore + 1
+            Result = 1
             GameWon()
         ElseIf xy00.Text = "O" And xy11.Text = "O" And xy22.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
-            OScore = OScore + 1
+            Result = 1
             GameWon()
         ElseIf xy02.Text = "O" And xy11.Text = "O" And xy20.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
-            OScore = OScore + 1
+            Result = 1
             GameWon()
         ElseIf xy10.Text = "O" And xy11.Text = "O" And xy12.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
-            OScore = OScore + 1
+            Result = 1
             GameWon()
         ElseIf xy20.Text = "O" And xy21.Text = "O" And xy22.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
-            OScore = OScore + 1
+            Result = 1
             GameWon()
         ElseIf xy01.Text = "O" And xy11.Text = "O" And xy21.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
-            OScore = OScore + 1
+            Result = 1
             GameWon()
         ElseIf xy02.Text = "O" And xy12.Text = "O" And xy22.Text = "O" Then
             MsgBox("Well done Player O, YOU WON!", MsgBoxStyle.Exclamation, "Player O WINS!")
-            OScore = OScore + 1
+            Result = 1
             GameWon()
         ElseIf xy00.Text = "X" And xy01.Text = "X" And xy02.Text = "X" Then
             MsgBox("Well done Player X, YOU WIN!", MsgBoxStyle.Exclamation, "Player X WINS!")
-            XScore = XScore + 1
+            Result = 0
             GameWon()
         ElseIf xy00.Text = "X" And xy10.Text = "X" And xy20.Text = "X" Then
             MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
-            XScore = XScore + 1
+            Result = 0
             GameWon()
         ElseIf xy00.Text = "X" And xy11.Text = "X" And xy22.Text = "X" Then
             MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
-            XScore = XScore + 1
+            Result = 0
             GameWon()
         ElseIf xy02.Text = "X" And xy11.Text = "X" And xy20.Text = "X" Then
             MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
-            XScore = XScore + 1
+            Result = 0
             GameWon()
         ElseIf xy10.Text = "X" And xy11.Text = "X" And xy12.Text = "X" Then
             MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
-            XScore = XScore + 1
+            Result = 0
             GameWon()
         ElseIf xy20.Text = "X" And xy21.Text = "X" And xy22.Text = "X" Then
             MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
-            XScore = XScore + 1
+            Result = 0
             GameWon()
         ElseIf xy01.Text = "X" And xy11.Text = "X" And xy21.Text = "X" Then
             MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
-            XScore = XScore + 1
+            Result = 0
             GameWon()
         ElseIf xy02.Text = "X" And xy12.Text = "X" And xy22.Text = "X" Then
             MsgBox("Well done Player X, YOU WXN!", MsgBoxStyle.Exclamation, "Player X WINS!")
-            XScore = XScore + 1
+            Result = 0
+            GameWon()
+        ElseIf xy00.Text <> Nothing And xy01.Text <> Nothing And xy02.Text <> Nothing And xy10.Text <> Nothing And xy20.Text <> Nothing And xy11.Text <> Nothing And xy12.Text <> Nothing And xy21.Text <> Nothing And xy22.Text <> Nothing Then
+            MsgBox("The Match is a Tie!", MsgBoxStyle.Exclamation, "TIE GAME!")
+            Result = 0
             GameWon()
         End If
     End Sub
     Public Sub GameWon()
         'This function finishes the game when won'
-        ResetBoard()
-        txtScore.Text = "Score: O " & OScore & " - X " & XScore
+        EloRating.EloRatingCalc(OElo, XElo, Result)
+        SaveElo()
+    End Sub
+
+    Private Sub SaveElo()
+        Dim con As New OleDb.OleDbConnection
+        Dim ds As New DataSet
+        Dim da As OleDb.OleDbDataAdapter
+        Dim sql As String
+
+        con.ConnectionString = "PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source = TicTacToe.mdb"
+
+        con.Open()
+        Sql = "SELECT * FROM tblPlayers"
+        da = New OleDb.OleDbDataAdapter(Sql, con)
+        da.Fill(ds, "Players")
+        con.Close()
+
+        Dim cb As New OleDb.OleDbCommandBuilder(da)
+
+        cb.QuotePrefix = "["
+        cb.QuoteSuffix = "]"
+        cb.ConflictOption = ConflictOption.OverwriteChanges
+
+        ds.Tables("Players").Rows(OUserID - 1).Item(6) = RatingNewO
+        ds.Tables("Players").Rows(XUserID - 1).Item(6) = RatingNewX
+
+        da.Update(ds, "Players")
+
+        MsgBox("Elo Ratings Updated")
+
+        Me.Close()
+    End Sub
+
+    Private Sub RankedMatch_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Enabled = False
+        RankedUserPicker.Show()
     End Sub
 End Class

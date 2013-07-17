@@ -44,6 +44,7 @@ Partial Class PlayerData
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button1
@@ -232,11 +233,19 @@ Partial Class PlayerData
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
+        'txtID
+        '
+        Me.txtID.Location = New System.Drawing.Point(390, 178)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(75, 20)
+        Me.txtID.TabIndex = 22
+        '
         'PlayerData
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(477, 210)
+        Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
@@ -286,4 +295,5 @@ Partial Class PlayerData
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents btnDelete As System.Windows.Forms.Button
     Friend WithEvents btnClear As System.Windows.Forms.Button
+    Friend WithEvents txtID As System.Windows.Forms.TextBox
 End Class

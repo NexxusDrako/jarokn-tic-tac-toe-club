@@ -1,18 +1,18 @@
 ﻿Public Class EloRating
 
-    Private Property ExpectedA As Integer
+    Public Shared Sub EloRatingCalc(ByVal RatingO As Single, ByVal RatingX As Single, ByVal Result As Single)
 
-    Private Property RatingDiff As Integer
+        Dim ExpectedA As Single
+        Dim RatingDiff As Single
+        Dim RatingNewO As Single
+        Dim RatingNewX As Single
 
-    Private Property RatingNewA As Integer
-
-    Private Property RatingNewB As Integer
-
-    Public Sub EloRatingCalc(ByVal RatingA As Integer, ByVal RatingB As Integer, ByVal Result As Integer)
-        ExpectedA = 1 / (1 + 10 ^ ((RatingA - RatingB) / 400))
+        ExpectedA = 1 / (1 + 10 ^ ((RatingO - RatingX) / 400))
         RatingDiff = 24 * (Result - ExpectedA)
-        RatingNewA = RatingA + RatingDiff
-        RatingNewB = RatingB - RatingDiff
+        RatingNewO = RatingO + RatingDiff
+        RatingNewX = RatingX - RatingDiff
+        RankedMatch.RatingNewO = CInt(RatingNewO)
+        RankedMatch.RatingNewX = CInt(RatingNewX)
     End Sub
 
 End Class

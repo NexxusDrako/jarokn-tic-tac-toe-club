@@ -5,7 +5,7 @@ Public Class Main
     Public Shared ThePassword As String
 
     Private Sub FriendlyMatchToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FriendlyMatchToolStripMenuItem.Click
-        FriendlyMatch.Show()
+        MessageBox.Show("This feature has been taken out due to major bugs. It shall return in the next release.", "Feature Removed")
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
@@ -45,5 +45,9 @@ Public Class Main
 
     Private Sub RankingsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RankingsToolStripMenuItem.Click
         Rankings.Show()
+    End Sub
+
+    Private Sub RankedMatchToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RankedMatchToolStripMenuItem.Click
+        RankedMatch.Show()
     End Sub
 End Class

@@ -120,12 +120,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EloRating.vb" />
-    <Compile Include="FriendlyMatch.Designer.vb">
-      <DependentUpon>FriendlyMatch.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FriendlyMatch.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +154,18 @@
     <Compile Include="PlayerData.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RankedMatch.Designer.vb">
+      <DependentUpon>RankedMatch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RankedMatch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankedUserPicker.Designer.vb">
+      <DependentUpon>RankedUserPicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RankedUserPicker.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Rankings.Designer.vb">
       <DependentUpon>Rankings.vb</DependentUpon>
     </Compile>
@@ -176,9 +182,6 @@
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FriendlyMatch.resx">
-      <DependentUpon>FriendlyMatch.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerData.resx">
       <DependentUpon>PlayerData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankedMatch.resx">
+      <DependentUpon>RankedMatch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankedUserPicker.resx">
+      <DependentUpon>RankedUserPicker.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rankings.resx">
       <DependentUpon>Rankings.vb</DependentUpon>
@@ -255,7 +264,7 @@
   <ItemGroup>
     <Content Include="Close.ico" />
     <Content Include="TicTacToe.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

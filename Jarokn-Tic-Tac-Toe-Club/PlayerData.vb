@@ -28,6 +28,7 @@
         txtRegion.Text = ds.Tables("Players").Rows(inc).Item(3)
         txtCountry.Text = ds.Tables("Players").Rows(inc).Item(4)
         txtPhone.Text = ds.Tables("Players").Rows(inc).Item(5)
+        txtID.Text = ds.Tables("Players").Rows(inc).Item(0)
 
     End Sub
 
@@ -91,6 +92,7 @@
 
         If inc <> -1 Then
 
+            ds.Tables("Players").Rows(inc).Item(0) = inc + 1
             ds.Tables("Players").Rows(inc).Item(1) = txtGiven.Text
             ds.Tables("Players").Rows(inc).Item(7) = txtFamily.Text
             ds.Tables("Players").Rows(inc).Item(2) = txtCity.Text
@@ -101,6 +103,15 @@
             da.Update(ds, "Players")
 
             MsgBox("Data updated")
+
+            inc = -1
+            txtGiven.Clear()
+            txtFamily.Clear()
+            txtCity.Clear()
+            txtRegion.Clear()
+            txtCountry.Clear()
+            txtPhone.Clear()
+            txtID.Clear()
         End If
     End Sub
 
@@ -141,6 +152,7 @@
 
             dsNewRow = ds.Tables("Players").NewRow()
 
+            dsNewRow.Item("UserID") = MaxRows + 1
             dsNewRow.Item("Given Names") = txtGiven.Text
             dsNewRow.Item("Surname") = txtFamily.Text
             dsNewRow.Item("City") = txtCity.Text
@@ -166,33 +178,50 @@
             da.Fill(ds, "Players")
             con.Close()
 
-            MaxRows = ds.Tables("Players").Rows.Count
+            MaxRows = MaxRows + 1
 
-            inc = 0
-            NavigateRecords()
+            inc = -1
+            txtGiven.Clear()
+            txtFamily.Clear()
+            txtCity.Clear()
+            txtRegion.Clear()
+            txtCountry.Clear()
+            txtPhone.Clear()
+            txtID.Clear()
         End If
     End Sub
 
     Private Sub btnDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDelete.Click
+        If MaxRows <> 1 Then
+            If MessageBox.Show("Do you really want to Delete this Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
 
-        If MessageBox.Show("Do you really want to Delete this Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+                MsgBox("Operation Cancelled")
+                Exit Sub
 
-            MsgBox("Operation Cancelled")
-            Exit Sub
+            End If
 
+            Dim cb As New OleDb.OleDbCommandBuilder(da)
+
+            cb.QuotePrefix = "["
+            cb.QuoteSuffix = "]"
+            cb.ConflictOption = ConflictOption.OverwriteChanges
+
+            ds.Tables("Players").Rows(inc).Delete()
+            MaxRows = MaxRows - 1
+
+            da.Update(ds, "Players")
+
+            inc = -1
+            txtGiven.Clear()
+            txtFamily.Clear()
+            txtCity.Clear()
+            txtRegion.Clear()
+            txtCountry.Clear()
+            txtPhone.Clear()
+            txtID.Clear()
+        Else
+            MessageBox.Show("You can't delete your last entry, try updating it!", "Don't Be Silly")
         End If
 
-        Dim cb As New OleDb.OleDbCommandBuilder(da)
-
-        cb.QuotePrefix = "["
-        cb.QuoteSuffix = "]"
-        cb.ConflictOption = ConflictOption.OverwriteChanges
-
-        ds.Tables("Players").Rows(inc).Delete()
-        MaxRows = MaxRows - 1
-
-        inc = 0
-        da.Update(ds, "Players")
-        NavigateRecords()
     End Sub
 End Class
