@@ -1,8 +1,8 @@
 ﻿Public Class FriendlyMatch
 
-    Private Property OTurn As Boolean
-    Private Property OScore As Integer
-    Private Property XScore As Integer
+    Dim OTurn As Boolean
+    Dim OScore As Integer
+    Dim XScore As Integer
 
     Public Sub MatchVars()
         OTurn = True
