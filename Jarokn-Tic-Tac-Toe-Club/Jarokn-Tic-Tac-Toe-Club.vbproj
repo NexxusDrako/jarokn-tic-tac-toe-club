@@ -160,6 +160,17 @@
     <Compile Include="PlayerData.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Rankings.Designer.vb">
+      <DependentUpon>Rankings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rankings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicTacToeDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicTacToeDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ChangePass.resx">
@@ -183,6 +194,9 @@
     <EmbeddedResource Include="PlayerData.resx">
       <DependentUpon>PlayerData.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rankings.resx">
+      <DependentUpon>Rankings.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -198,6 +212,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="TicTacToeDataSet.xsc">
+      <DependentUpon>TicTacToeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TicTacToeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TicTacToeDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TicTacToeDataSet.xss">
+      <DependentUpon>TicTacToeDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -230,7 +255,7 @@
   <ItemGroup>
     <Content Include="Close.ico" />
     <Content Include="TicTacToe.mdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

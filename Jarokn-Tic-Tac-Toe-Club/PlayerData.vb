@@ -167,6 +167,7 @@
             con.Close()
 
             MaxRows = ds.Tables("Players").Rows.Count
+
             inc = 0
             NavigateRecords()
         End If

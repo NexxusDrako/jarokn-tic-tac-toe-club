@@ -14,6 +14,7 @@ Public Class Main
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim file As System.IO.FileStream
+        'This block of code loads a password file, if not found, it will create one.
         If System.IO.File.Exists("pwd.txt") = True Then
             Dim stream As StreamReader
             stream = New StreamReader("pwd.txt")
@@ -40,5 +41,9 @@ Public Class Main
 
     Private Sub PlayersToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayersToolStripMenuItem.Click
         PlayerData.Show()
+    End Sub
+
+    Private Sub RankingsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RankingsToolStripMenuItem.Click
+        Rankings.Show()
     End Sub
 End Class

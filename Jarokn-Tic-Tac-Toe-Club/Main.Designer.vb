@@ -83,25 +83,25 @@ Partial Class Main
         'PlayersToolStripMenuItem
         '
         Me.PlayersToolStripMenuItem.Name = "PlayersToolStripMenuItem"
-        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.PlayersToolStripMenuItem.Text = "Players"
         '
         'TeamsToolStripMenuItem
         '
         Me.TeamsToolStripMenuItem.Name = "TeamsToolStripMenuItem"
-        Me.TeamsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TeamsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.TeamsToolStripMenuItem.Text = "Teams"
         '
         'MatchesToolStripMenuItem
         '
         Me.MatchesToolStripMenuItem.Name = "MatchesToolStripMenuItem"
-        Me.MatchesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MatchesToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.MatchesToolStripMenuItem.Text = "Matches"
         '
         'TournamentsToolStripMenuItem
         '
         Me.TournamentsToolStripMenuItem.Name = "TournamentsToolStripMenuItem"
-        Me.TournamentsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TournamentsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.TournamentsToolStripMenuItem.Text = "Tournaments"
         '
         'PlayToolStripMenuItem
