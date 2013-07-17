@@ -22,6 +22,14 @@
 
     Private Sub NavigateRecords()
 
+        con.ConnectionString = "PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source = TicTacToe.mdb"
+
+        con.Open()
+        sql = "SELECT * FROM tblPlayers"
+        da = New OleDb.OleDbDataAdapter(sql, con)
+        da.Fill(ds, "Players")
+        con.Close()
+
         txtGiven.Text = ds.Tables("Players").Rows(inc).Item(1)
         txtFamily.Text = ds.Tables("Players").Rows(inc).Item(7)
         txtCity.Text = ds.Tables("Players").Rows(inc).Item(2)
@@ -33,7 +41,7 @@
     End Sub
 
     Private Sub btnNext_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNext.Click
-        If inc <> MaxRows - 1 Then
+        If inc < MaxRows - 1 Then
 
             inc = inc + 1
 
@@ -120,6 +128,10 @@
         btnAddNew.Enabled = False
         btnUpdate.Enabled = False
         btnDelete.Enabled = False
+        btnNext.Enabled = False
+        btnLast.Enabled = False
+        btnFirst.Enabled = False
+        btnPrev.Enabled = False
 
         txtGiven.Clear()
         txtFamily.Clear()
@@ -134,6 +146,10 @@
         btnAddNew.Enabled = True
         btnUpdate.Enabled = True
         btnDelete.Enabled = True
+        btnNext.Enabled = True
+        btnLast.Enabled = True
+        btnFirst.Enabled = True
+        btnPrev.Enabled = True
 
         inc = 0
         NavigateRecords()
@@ -171,23 +187,16 @@
             btnAddNew.Enabled = True
             btnUpdate.Enabled = True
             btnDelete.Enabled = True
-
-            con.Open()
-            sql = "SELECT * FROM tblPlayers"
-            da = New OleDb.OleDbDataAdapter(sql, con)
-            da.Fill(ds, "Players")
-            con.Close()
+            btnNext.Enabled = True
+            btnLast.Enabled = True
+            btnFirst.Enabled = True
+            btnPrev.Enabled = True
 
             MaxRows = MaxRows + 1
 
-            inc = -1
-            txtGiven.Clear()
-            txtFamily.Clear()
-            txtCity.Clear()
-            txtRegion.Clear()
-            txtCountry.Clear()
-            txtPhone.Clear()
-            txtID.Clear()
+            MessageBox.Show("The database window must refresh itself, so it needs to close.  Sorry for the inconvenience.", "Refresh Needed")
+
+            Me.Close()
         End If
     End Sub
 
@@ -207,18 +216,13 @@
             cb.ConflictOption = ConflictOption.OverwriteChanges
 
             ds.Tables("Players").Rows(inc).Delete()
-            MaxRows = MaxRows - 1
 
             da.Update(ds, "Players")
 
-            inc = -1
-            txtGiven.Clear()
-            txtFamily.Clear()
-            txtCity.Clear()
-            txtRegion.Clear()
-            txtCountry.Clear()
-            txtPhone.Clear()
-            txtID.Clear()
+            MaxRows = MaxRows - 1
+
+            inc = 0
+            NavigateRecords()
         Else
             MessageBox.Show("You can't delete your last entry, try updating it!", "Don't Be Silly")
         End If
