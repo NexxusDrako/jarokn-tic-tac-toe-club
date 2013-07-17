@@ -24,6 +24,7 @@ Partial Class Main
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlayersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,7 +42,6 @@ Partial Class Main
         Me.EloCalculatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,6 +61,12 @@ Partial Class Main
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
+        'ChangePasswordToolStripMenuItem
+        '
+        Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
+        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
+        '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
@@ -77,25 +83,25 @@ Partial Class Main
         'PlayersToolStripMenuItem
         '
         Me.PlayersToolStripMenuItem.Name = "PlayersToolStripMenuItem"
-        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PlayersToolStripMenuItem.Text = "Players"
         '
         'TeamsToolStripMenuItem
         '
         Me.TeamsToolStripMenuItem.Name = "TeamsToolStripMenuItem"
-        Me.TeamsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.TeamsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.TeamsToolStripMenuItem.Text = "Teams"
         '
         'MatchesToolStripMenuItem
         '
         Me.MatchesToolStripMenuItem.Name = "MatchesToolStripMenuItem"
-        Me.MatchesToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.MatchesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.MatchesToolStripMenuItem.Text = "Matches"
         '
         'TournamentsToolStripMenuItem
         '
         Me.TournamentsToolStripMenuItem.Name = "TournamentsToolStripMenuItem"
-        Me.TournamentsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.TournamentsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.TournamentsToolStripMenuItem.Text = "Tournaments"
         '
         'PlayToolStripMenuItem
@@ -170,12 +176,6 @@ Partial Class Main
         Me.lblTitle.TabIndex = 1
         Me.lblTitle.Text = "Jarokn Tic-Tac-Toe Club" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "By Jarokn Games"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'ChangePasswordToolStripMenuItem
-        '
-        Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
-        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
         '
         'Main
         '

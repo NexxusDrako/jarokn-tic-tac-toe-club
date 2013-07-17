@@ -84,6 +84,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Close.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -151,10 +154,11 @@
     <Compile Include="Password.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlayersDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PlayersDataSet.xsd</DependentUpon>
+    <Compile Include="PlayerData.Designer.vb">
+      <DependentUpon>PlayerData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerData.vb">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -176,9 +180,14 @@
     <EmbeddedResource Include="Password.resx">
       <DependentUpon>Password.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlayerData.resx">
+      <DependentUpon>PlayerData.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Jarokn-Tic-Tac-Toe-Club_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -189,17 +198,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="PlayersDataSet.xsc">
-      <DependentUpon>PlayersDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PlayersDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PlayersDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PlayersDataSet.xss">
-      <DependentUpon>PlayersDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -230,7 +228,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="JaroknTicTacToeClub.sdf">
+    <Content Include="Close.ico" />
+    <Content Include="TicTacToe.mdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

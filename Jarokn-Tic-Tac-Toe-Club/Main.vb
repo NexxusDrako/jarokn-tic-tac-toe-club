@@ -37,4 +37,8 @@ Public Class Main
     Private Sub ChangePasswordToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChangePasswordToolStripMenuItem.Click
         ChangePass.Show()
     End Sub
+
+    Private Sub PlayersToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayersToolStripMenuItem.Click
+        PlayerData.Show()
+    End Sub
 End Class
