@@ -29,7 +29,7 @@
     <ProductName>Jarokn Tic-Tac-Toe Club</ProductName>
     <PublisherName>Jarokn Games</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.1.1.0</ApplicationVersion>
+    <ApplicationVersion>0.2.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -84,11 +84,16 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Close.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -108,12 +113,13 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FriendlyMatch.Designer.vb">
-      <DependentUpon>FriendlyMatch.vb</DependentUpon>
+    <Compile Include="ChangePass.Designer.vb">
+      <DependentUpon>ChangePass.vb</DependentUpon>
     </Compile>
-    <Compile Include="FriendlyMatch.vb">
+    <Compile Include="ChangePass.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EloRating.vb" />
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -136,10 +142,45 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Password.Designer.vb">
+      <DependentUpon>Password.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Password.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerData.Designer.vb">
+      <DependentUpon>PlayerData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankedMatch.Designer.vb">
+      <DependentUpon>RankedMatch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RankedMatch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankedUserPicker.Designer.vb">
+      <DependentUpon>RankedUserPicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RankedUserPicker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rankings.Designer.vb">
+      <DependentUpon>Rankings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rankings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicTacToeDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicTacToeDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FriendlyMatch.resx">
-      <DependentUpon>FriendlyMatch.vb</DependentUpon>
+    <EmbeddedResource Include="ChangePass.resx">
+      <DependentUpon>ChangePass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
@@ -150,8 +191,26 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerData.resx">
+      <DependentUpon>PlayerData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankedMatch.resx">
+      <DependentUpon>RankedMatch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankedUserPicker.resx">
+      <DependentUpon>RankedUserPicker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rankings.resx">
+      <DependentUpon>Rankings.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Jarokn-Tic-Tac-Toe-Club_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -162,6 +221,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="TicTacToeDataSet.xsc">
+      <DependentUpon>TicTacToeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TicTacToeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TicTacToeDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TicTacToeDataSet.xss">
+      <DependentUpon>TicTacToeDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -180,11 +250,22 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
       <Visible>False</Visible>
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Close.ico" />
+    <Content Include="TicTacToe.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
