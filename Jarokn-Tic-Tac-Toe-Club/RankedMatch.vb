@@ -170,7 +170,7 @@
             GameWon()
         ElseIf xy00.Text <> Nothing And xy01.Text <> Nothing And xy02.Text <> Nothing And xy10.Text <> Nothing And xy20.Text <> Nothing And xy11.Text <> Nothing And xy12.Text <> Nothing And xy21.Text <> Nothing And xy22.Text <> Nothing Then
             MsgBox("The Match is a Tie!", MsgBoxStyle.Exclamation, "TIE GAME!")
-            Result = 0
+            Result = 0.5
             GameWon()
         End If
     End Sub
