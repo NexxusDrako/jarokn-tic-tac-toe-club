@@ -1,18 +1,24 @@
 ﻿Public Class EloRating
 
-    Public Shared Sub EloRatingCalc(ByVal RatingO As Single, ByVal RatingX As Single, ByVal Result As Single)
+    Public Shared Sub EloRatingCalc(ByVal Ro As Single, ByVal Rx As Single, ByVal Result As Single)
 
-        Dim ExpectedA As Single
+        Dim Eo As Single
+        Dim Ex As Single
         Dim RatingDiff As Single
-        Dim RatingNewO As Single
-        Dim RatingNewX As Single
+        Dim ExpectedB As Single
 
-        ExpectedA = 1 / (1 + 10 ^ ((RatingO - RatingX) / 400))
-        RatingDiff = 24 * (Result - ExpectedA)
-        RatingNewO = RatingO + RatingDiff
-        RatingNewX = RatingX - RatingDiff
-        RankedMatch.RatingNewO = CInt(RatingNewO)
-        RankedMatch.RatingNewX = CInt(RatingNewX)
+        Eo = 1 / (1 + 10 ^ ((Rx - Ro) / 400))
+        Ex = 1 / (1 + 10 ^ ((Ro - Rx) / 400))
+        If Result = 1 Then
+            RankedMatch.RatingNewO = Ro + 24 * (1 - Eo)
+            RankedMatch.RatingNewX = Rx + 24 * (0 - Ex)
+        ElseIf Result = 0.5 Then
+            RankedMatch.RatingNewO = Ro + 24 * (0.5 - Eo)
+            RankedMatch.RatingNewX = Rx + 24 * (0.5 - Ex)
+        ElseIf Result = 0 Then
+            RankedMatch.RatingNewO = Ro + 24 * (0 - Eo)
+            RankedMatch.RatingNewX = Rx + 24 * (1 - Ex)
+        End If
     End Sub
 
 End Class
