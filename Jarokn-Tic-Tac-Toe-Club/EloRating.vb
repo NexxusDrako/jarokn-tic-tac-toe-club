@@ -4,8 +4,6 @@
 
         Dim Eo As Single
         Dim Ex As Single
-        Dim RatingDiff As Single
-        Dim ExpectedB As Single
 
         Eo = 1 / (1 + 10 ^ ((Rx - Ro) / 400))
         Ex = 1 / (1 + 10 ^ ((Ro - Rx) / 400))
