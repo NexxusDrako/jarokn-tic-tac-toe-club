@@ -15,6 +15,7 @@
         ElseIf OTurn = False Then
             xy00.Text = "X"
         End If
+        xy00.Enabled = False
         TurnDone()
     End Sub
 
@@ -24,6 +25,7 @@
         ElseIf OTurn = False Then
             xy10.Text = "X"
         End If
+        xy10.Enabled = False
         TurnDone()
     End Sub
 
@@ -33,6 +35,7 @@
         ElseIf OTurn = False Then
             xy20.Text = "X"
         End If
+        xy20.Enabled = False
         TurnDone()
     End Sub
 
@@ -42,6 +45,7 @@
         ElseIf OTurn = False Then
             xy01.Text = "X"
         End If
+        xy01.Enabled = False
         TurnDone()
     End Sub
 
@@ -51,6 +55,7 @@
         ElseIf OTurn = False Then
             xy11.Text = "X"
         End If
+        xy11.Enabled = False
         TurnDone()
     End Sub
 
@@ -60,6 +65,7 @@
         ElseIf OTurn = False Then
             xy21.Text = "X"
         End If
+        xy21.Enabled = False
         TurnDone()
     End Sub
 
@@ -69,6 +75,7 @@
         ElseIf OTurn = False Then
             xy02.Text = "X"
         End If
+        xy02.Enabled = False
         TurnDone()
     End Sub
 
@@ -78,6 +85,7 @@
         ElseIf OTurn = False Then
             xy12.Text = "X"
         End If
+        xy12.Enabled = False
         TurnDone()
     End Sub
 
@@ -87,6 +95,7 @@
         ElseIf OTurn = False Then
             xy22.Text = "X"
         End If
+        xy22.Enabled = False
         TurnDone()
     End Sub
 
