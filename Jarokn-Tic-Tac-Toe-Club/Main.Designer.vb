@@ -26,28 +26,22 @@ Partial Class Main
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PlayersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TeamsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MatchesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TournamentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FriendlyMatchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RankedMatchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TournamentMatchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RankingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OnlineHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EloCalculatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.PlayersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ClubToolStripMenuItem, Me.PlayToolStripMenuItem, Me.RankingsToolStripMenuItem, Me.StatsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.PlayersToolStripMenuItem, Me.PlayToolStripMenuItem, Me.RankingsToolStripMenuItem, Me.StatsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(352, 24)
@@ -73,40 +67,9 @@ Partial Class Main
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
-        'ClubToolStripMenuItem
-        '
-        Me.ClubToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayersToolStripMenuItem, Me.TeamsToolStripMenuItem, Me.MatchesToolStripMenuItem, Me.TournamentsToolStripMenuItem})
-        Me.ClubToolStripMenuItem.Name = "ClubToolStripMenuItem"
-        Me.ClubToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
-        Me.ClubToolStripMenuItem.Text = "Club"
-        '
-        'PlayersToolStripMenuItem
-        '
-        Me.PlayersToolStripMenuItem.Name = "PlayersToolStripMenuItem"
-        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
-        Me.PlayersToolStripMenuItem.Text = "Players"
-        '
-        'TeamsToolStripMenuItem
-        '
-        Me.TeamsToolStripMenuItem.Name = "TeamsToolStripMenuItem"
-        Me.TeamsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
-        Me.TeamsToolStripMenuItem.Text = "Teams"
-        '
-        'MatchesToolStripMenuItem
-        '
-        Me.MatchesToolStripMenuItem.Name = "MatchesToolStripMenuItem"
-        Me.MatchesToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
-        Me.MatchesToolStripMenuItem.Text = "Matches"
-        '
-        'TournamentsToolStripMenuItem
-        '
-        Me.TournamentsToolStripMenuItem.Name = "TournamentsToolStripMenuItem"
-        Me.TournamentsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
-        Me.TournamentsToolStripMenuItem.Text = "Tournaments"
-        '
         'PlayToolStripMenuItem
         '
-        Me.PlayToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FriendlyMatchToolStripMenuItem, Me.RankedMatchToolStripMenuItem, Me.TournamentMatchToolStripMenuItem})
+        Me.PlayToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FriendlyMatchToolStripMenuItem, Me.RankedMatchToolStripMenuItem})
         Me.PlayToolStripMenuItem.Name = "PlayToolStripMenuItem"
         Me.PlayToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
         Me.PlayToolStripMenuItem.Text = "Play"
@@ -114,20 +77,14 @@ Partial Class Main
         'FriendlyMatchToolStripMenuItem
         '
         Me.FriendlyMatchToolStripMenuItem.Name = "FriendlyMatchToolStripMenuItem"
-        Me.FriendlyMatchToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.FriendlyMatchToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.FriendlyMatchToolStripMenuItem.Text = "Friendly Match"
         '
         'RankedMatchToolStripMenuItem
         '
         Me.RankedMatchToolStripMenuItem.Name = "RankedMatchToolStripMenuItem"
-        Me.RankedMatchToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.RankedMatchToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.RankedMatchToolStripMenuItem.Text = "Ranked Match"
-        '
-        'TournamentMatchToolStripMenuItem
-        '
-        Me.TournamentMatchToolStripMenuItem.Name = "TournamentMatchToolStripMenuItem"
-        Me.TournamentMatchToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
-        Me.TournamentMatchToolStripMenuItem.Text = "Tournament Match"
         '
         'RankingsToolStripMenuItem
         '
@@ -143,7 +100,7 @@ Partial Class Main
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OnlineHelpToolStripMenuItem, Me.EloCalculatorToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OnlineHelpToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -151,19 +108,13 @@ Partial Class Main
         'OnlineHelpToolStripMenuItem
         '
         Me.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem"
-        Me.OnlineHelpToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.OnlineHelpToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.OnlineHelpToolStripMenuItem.Text = "Online Help"
-        '
-        'EloCalculatorToolStripMenuItem
-        '
-        Me.EloCalculatorToolStripMenuItem.Name = "EloCalculatorToolStripMenuItem"
-        Me.EloCalculatorToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
-        Me.EloCalculatorToolStripMenuItem.Text = "Elo Calculator"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'lblTitle
@@ -176,6 +127,12 @@ Partial Class Main
         Me.lblTitle.TabIndex = 1
         Me.lblTitle.Text = "Jarokn Tic-Tac-Toe Club" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "By Jarokn Games"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PlayersToolStripMenuItem
+        '
+        Me.PlayersToolStripMenuItem.Name = "PlayersToolStripMenuItem"
+        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.PlayersToolStripMenuItem.Text = "Players"
         '
         'Main
         '
@@ -196,8 +153,6 @@ Partial Class Main
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClubToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PlayersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PlayToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FriendlyMatchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RankedMatchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -207,11 +162,7 @@ Partial Class Main
     Friend WithEvents OnlineHelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents lblTitle As System.Windows.Forms.Label
-    Friend WithEvents TeamsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MatchesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TournamentsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TournamentMatchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EloCalculatorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ChangePasswordToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PlayersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -112,4 +112,10 @@
             End If
         End If
     End Sub
+
+    Private Sub Form_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If RankedMatch.XUserID = Nothing Then
+            RankedMatch.Close()
+        End If
+    End Sub
 End Class

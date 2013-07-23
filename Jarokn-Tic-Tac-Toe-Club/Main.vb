@@ -5,7 +5,7 @@ Public Class Main
     Public Shared ThePassword As String
 
     Private Sub FriendlyMatchToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FriendlyMatchToolStripMenuItem.Click
-        MessageBox.Show("This feature has been taken out due to major bugs. It shall return in the next release.", "Feature Removed")
+        FriendlyMatch.Show()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
@@ -39,7 +39,7 @@ Public Class Main
         ChangePass.Show()
     End Sub
 
-    Private Sub PlayersToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayersToolStripMenuItem.Click
+    Private Sub PlayersToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         PlayerData.Show()
     End Sub
 

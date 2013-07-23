@@ -1,13 +1,40 @@
-﻿Public Class RankedMatch
+﻿Public Class FriendlyMatch
 
     Public OTurn As Boolean = True
-    Public OElo As Integer
-    Public XElo As Integer
-    Public OUserID As Integer
-    Public XUserID As Integer
+    Public OScore As Single
+    Public XScore As Single
     Public Result As Single
-    Public Shared RatingNewO As Integer
-    Public Shared RatingNewX As Integer
+
+    Public Sub GameWon()
+        If Result = 1 Then
+            OScore = OScore + 1
+        ElseIf Result = 0.5 Then
+            OScore = OScore + 0.5
+            XScore = XScore + 0.5
+        ElseIf Result = 0 Then
+            XScore = XScore + 1
+        End If
+        txtScore.Text = "Score: O " & OScore & " - X " & XScore
+        xy00.Text = ""
+        xy00.Enabled = True
+        xy10.Text = ""
+        xy10.Enabled = True
+        xy20.Text = ""
+        xy20.Enabled = True
+        xy01.Text = ""
+        xy01.Enabled = True
+        xy02.Text = ""
+        xy02.Enabled = True
+        xy11.Text = ""
+        xy11.Enabled = True
+        xy12.Text = ""
+        xy12.Enabled = True
+        xy21.Text = ""
+        xy21.Enabled = True
+        xy22.Text = ""
+        xy22.Enabled = True
+        OTurn = True
+    End Sub
 
     Private Sub xy00_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xy00.Click
         If OTurn = True Then
@@ -183,44 +210,5 @@
             GameWon()
         End If
     End Sub
-    Public Sub GameWon()
-        'This function finishes the game when won'
-        EloRating.EloRatingCalc(OElo, XElo, Result)
-        SaveElo()
-    End Sub
 
-    Private Sub SaveElo()
-        Dim con As New OleDb.OleDbConnection
-        Dim ds As New DataSet
-        Dim da As OleDb.OleDbDataAdapter
-        Dim sql As String
-
-        con.ConnectionString = "PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source = TicTacToe.mdb"
-
-        con.Open()
-        Sql = "SELECT * FROM tblPlayers"
-        da = New OleDb.OleDbDataAdapter(Sql, con)
-        da.Fill(ds, "Players")
-        con.Close()
-
-        Dim cb As New OleDb.OleDbCommandBuilder(da)
-
-        cb.QuotePrefix = "["
-        cb.QuoteSuffix = "]"
-        cb.ConflictOption = ConflictOption.OverwriteChanges
-
-        ds.Tables("Players").Rows(OUserID - 1).Item(6) = RatingNewO
-        ds.Tables("Players").Rows(XUserID - 1).Item(6) = RatingNewX
-
-        da.Update(ds, "Players")
-
-        MsgBox("Elo Ratings Updated")
-
-        Me.Close()
-    End Sub
-
-    Private Sub RankedMatch_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        RankedUserPicker.Show()
-        Me.Enabled = False
-    End Sub
 End Class

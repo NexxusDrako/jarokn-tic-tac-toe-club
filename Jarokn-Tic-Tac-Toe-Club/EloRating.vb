@@ -11,8 +11,8 @@
             RankedMatch.RatingNewO = Ro + 24 * (1 - Eo)
             RankedMatch.RatingNewX = Rx + 24 * (0 - Ex)
         ElseIf Result = 0.5 Then
-            RankedMatch.RatingNewO = Ro + 24 * (0.5 - Eo)
-            RankedMatch.RatingNewX = Rx + 24 * (0.5 - Ex)
+            RankedMatch.RatingNewO = Ro
+            RankedMatch.RatingNewX = Rx
         ElseIf Result = 0 Then
             RankedMatch.RatingNewO = Ro + 24 * (0 - Eo)
             RankedMatch.RatingNewX = Rx + 24 * (1 - Ex)
