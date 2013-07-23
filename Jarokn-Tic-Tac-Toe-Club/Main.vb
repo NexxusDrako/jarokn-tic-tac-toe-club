@@ -39,15 +39,15 @@ Public Class Main
         ChangePass.Show()
     End Sub
 
-    Private Sub PlayersToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        PlayerData.Show()
-    End Sub
-
     Private Sub RankingsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RankingsToolStripMenuItem.Click
         Rankings.Show()
     End Sub
 
     Private Sub RankedMatchToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RankedMatchToolStripMenuItem.Click
         RankedMatch.Show()
+    End Sub
+
+    Private Sub PlayersToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayersToolStripMenuItem.Click
+        PlayerData.Show()
     End Sub
 End Class

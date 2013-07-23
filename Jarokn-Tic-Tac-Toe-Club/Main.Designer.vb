@@ -26,6 +26,7 @@ Partial Class Main
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlayersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FriendlyMatchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RankedMatchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -35,7 +36,6 @@ Partial Class Main
         Me.OnlineHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.PlayersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,6 +66,12 @@ Partial Class Main
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'PlayersToolStripMenuItem
+        '
+        Me.PlayersToolStripMenuItem.Name = "PlayersToolStripMenuItem"
+        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.PlayersToolStripMenuItem.Text = "Players"
         '
         'PlayToolStripMenuItem
         '
@@ -108,13 +114,13 @@ Partial Class Main
         'OnlineHelpToolStripMenuItem
         '
         Me.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem"
-        Me.OnlineHelpToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OnlineHelpToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.OnlineHelpToolStripMenuItem.Text = "Online Help"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'lblTitle
@@ -127,12 +133,6 @@ Partial Class Main
         Me.lblTitle.TabIndex = 1
         Me.lblTitle.Text = "Jarokn Tic-Tac-Toe Club" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "By Jarokn Games"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PlayersToolStripMenuItem
-        '
-        Me.PlayersToolStripMenuItem.Name = "PlayersToolStripMenuItem"
-        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.PlayersToolStripMenuItem.Text = "Players"
         '
         'Main
         '
