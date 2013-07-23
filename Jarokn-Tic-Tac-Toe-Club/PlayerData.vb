@@ -100,7 +100,6 @@
 
         If inc <> -1 Then
 
-            ds.Tables("Players").Rows(inc).Item(0) = inc + 1
             ds.Tables("Players").Rows(inc).Item(1) = txtGiven.Text
             ds.Tables("Players").Rows(inc).Item(7) = txtFamily.Text
             ds.Tables("Players").Rows(inc).Item(2) = txtCity.Text
@@ -124,21 +123,25 @@
     End Sub
 
     Private Sub btnAddNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddNew.Click
-        btnCommit.Enabled = True
-        btnAddNew.Enabled = False
-        btnUpdate.Enabled = False
-        btnDelete.Enabled = False
-        btnNext.Enabled = False
-        btnLast.Enabled = False
-        btnFirst.Enabled = False
-        btnPrev.Enabled = False
+        If inc <> -1 Then
+            btnCommit.Enabled = True
+            btnAddNew.Enabled = False
+            btnUpdate.Enabled = False
+            btnDelete.Enabled = False
+            btnNext.Enabled = False
+            btnLast.Enabled = False
+            btnFirst.Enabled = False
+            btnPrev.Enabled = False
 
-        txtGiven.Clear()
-        txtFamily.Clear()
-        txtCity.Clear()
-        txtRegion.Clear()
-        txtCountry.Clear()
-        txtPhone.Clear()
+            txtGiven.Clear()
+            txtFamily.Clear()
+            txtCity.Clear()
+            txtRegion.Clear()
+            txtCountry.Clear()
+            txtPhone.Clear()
+        Else
+            MessageBox.Show("Please navigate to a record before adding one.", "Error")
+        End If
     End Sub
 
     Private Sub btnClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClear.Click
@@ -220,12 +223,17 @@
             da.Update(ds, "Players")
 
             MaxRows = MaxRows - 1
-
             inc = 0
+            Do While inc < (MaxRows)
+                ds.Tables("Players").Rows(inc).Item(0) = inc + 1
+                inc = inc + 1
+            Loop
+            inc = 0
+            da.Update(ds, "Players")
             NavigateRecords()
         Else
             MessageBox.Show("You can't delete your last entry, try updating it!", "Don't Be Silly")
         End If
-
+        MessageBox.Show("Record has been deleted.", "Record Deleted")
     End Sub
 End Class
